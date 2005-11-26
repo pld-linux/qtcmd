@@ -9,24 +9,3 @@
  	$(QMAKE) -o Makefile qtcmd.pro
  qmake: qmake_all
  	@$(QMAKE) -o Makefile qtcmd.pro
---- qtcmd-0.6/src/Makefile~	2005-11-26 15:17:44.777574384 +0100
-+++ qtcmd-0.6/src/Makefile	2005-11-26 15:32:32.717586984 +0100
-@@ -999,13 +999,13 @@
- ####### Install
- 
- install_target: all 
--	@$(CHK_DIR_EXISTS) "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/" || $(MKDIR) "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/"
--	-$(INSTALL_FILE) "../bin/$(QMAKE_TARGET)" "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/$(QMAKE_TARGET)"
--	-strip "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/$(QMAKE_TARGET)"
-+	@$(CHK_DIR_EXISTS) "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/" || $(MKDIR) "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/"
-+	-$(INSTALL_FILE) "../bin/$(QMAKE_TARGET)" "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/$(QMAKE_TARGET)"
-+	-strip "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/$(QMAKE_TARGET)"
- 
- uninstall_target: 
--	-$(DEL_FILE) "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/$(QMAKE_TARGET)"
--	-$(DEL_DIR) "$(INSTALL_ROOT)$(DESTDIR)/usr/local/bin/"
-+	-$(DEL_FILE) "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/$(QMAKE_TARGET)"
-+	-$(DEL_DIR) "$(INSTALL_ROOT)$(DESTDIR)$(PREFIX)/bin/"
- 
- 
- install: install_target  
