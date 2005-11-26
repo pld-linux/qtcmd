@@ -25,7 +25,7 @@ firmy Microsoft Windows o nazwie "Total Commander".
 %prep
 %setup -q
 %patch0 -p1
-find src/libs -name 'Makefile' | xargs sed -i -e 's,/usr/local/lib,$(LIBDIR),g'
+find src/ -name '*.pro' | xargs sed -i -e 's,/usr/local/lib,$(LIBDIR),g' -e 's,/usr/local/bin,$(BINDIR),g'
 
 %build
 %{__make} \
@@ -35,6 +35,7 @@ find src/libs -name 'Makefile' | xargs sed -i -e 's,/usr/local/lib,$(LIBDIR),g'
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	BINDIR=%{_bindir} \
 	DESTDIR=$RPM_BUILD_ROOT \
 	LIBDIR=%{_libdir} \
 	PREFIX="%{_prefix}" \
