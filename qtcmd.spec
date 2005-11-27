@@ -11,6 +11,7 @@ Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-lib64.patch
 URL:		http://qtcmd.nes.pl/
 BuildRequires:	qmake
+BuildRequires:	qt-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
