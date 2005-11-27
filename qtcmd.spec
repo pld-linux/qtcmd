@@ -10,6 +10,7 @@ Source0:	http://qtcmd.nes.pl/download/stable/source/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-Makefile.patch
 URL:		http://qtcmd.nes.pl/
 BuildRequires:	qmake
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
