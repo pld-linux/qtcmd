@@ -2,7 +2,7 @@ Summary:	QT based file manager inspired by Total Commander
 Summary(pl):	Oparty na QT zarz±dca plików wzorowany na Total Commanderze
 Name:		qtcmd
 Version:	0.6
-Release:	0.2
+Release:	0.3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://qtcmd.nes.pl/download/stable/source/%{name}-%{version}.tar.bz2
@@ -46,6 +46,10 @@ rm -rf $RPM_BUILD_ROOT
 	PREFIX="%{_prefix}" \
 	QTDIR="%{_prefix}"
 
+# install docs, unfortunately only in polish
+install -d $RPM_BUILD_ROOT%{_docdir}/%{name}/pl
+cp -a doc/pl/*.html $RPM_BUILD_ROOT%{_docdir}/%{name}/pl
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -55,6 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog IDEAs README TODO
+%doc %dir %{_docdir}/%{name}
+%doc %lang(pl) %{_docdir}/%{name}/pl
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_libdir}/qtcmd
