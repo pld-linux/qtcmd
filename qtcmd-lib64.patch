@@ -1,0 +1,22 @@
+--- ./src/fileview.cpp	2005-11-27 16:38:16.000000000 +0200
++++ ./src/fileview.cpp~	2005-04-01 22:23:08.000000000 +0300
+@@ -155,7 +155,7 @@
+ 	if ( QFileInfo(mPluginsPath+".libs").exists() ) // apps. executed from project
+ 		mPluginsPath += ".libs/plugins/";
+ 	else
+-		mPluginsPath += "lib/qtcmd/plugins/"; // apps. is installed
++		mPluginsPath += "lib64/qtcmd/plugins/"; // apps. is installed
+ }
+ 
+ 
+--- ./src/qtcmd.cpp~	2005-01-23 23:10:57.000000000 +0200
++++ ./src/qtcmd.cpp	2005-11-27 16:38:28.000000000 +0200
+@@ -141,7 +141,7 @@
+ 	if ( QFileInfo(mPluginsPath+".libs").exists() ) // apps. executed from project
+ 		mPluginsPath += ".libs/plugins/";
+ 	else
+-		mPluginsPath += "lib/qtcmd/plugins/"; // apps. is installed
++		mPluginsPath += "lib64/qtcmd/plugins/"; // apps. is installed
+ 	mSettingsLib = new QLibrary( mPluginsPath+"libsettingsapp.so" );
+ }
+ 
