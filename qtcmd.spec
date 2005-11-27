@@ -1,5 +1,5 @@
 Summary:	QT based file manager inspired by Total Commander
-Summary(pl):	Oparty na QT zarz±dca plików wzorowany na Total Commander
+Summary(pl):	Oparty na QT zarz±dca plików wzorowany na Total Commanderze
 Name:		qtcmd
 Version:	0.6
 Release:	0.1
@@ -18,9 +18,9 @@ System, based on similar application for Microsoft Windows named
 Total Commander.
 
 %description -l pl
-QtCommander jest rozbudowanym dwu-panelowym menad¿erem plików dla
-systemu linux wzorowanym na podobnej aplikacji dostêpnej w systemach
-firmy Microsoft Windows o nazwie "Total Commander".
+QtCommander jest rozbudowanym dwupanelowym zarz±dc± plików dla systemu
+Linux wzorowanym na podobnej aplikacji dostêpnej w systemach Microsoft
+Windows o nazwie "Total Commander".
 
 %prep
 %setup -q
@@ -44,8 +44,14 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog IDEAs README TODO
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%dir %{_libdir}/qtcmd
+%dir %{_libdir}/qtcmd/plugins
+%attr(755,root,root) %{_libdir}/qtcmd/plugins/lib*.so
