@@ -1,5 +1,5 @@
 Summary:	QT based file manager inspired by Total Commander
-Summary(pl.UTF-8):   Oparty na QT zarządca plików wzorowany na Total Commanderze
+Summary(pl.UTF-8):	Oparty na QT zarządca plików wzorowany na Total Commanderze
 Name:		qtcmd
 Version:	0.6.1
 Release:	0.1
