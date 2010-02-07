@@ -1,12 +1,12 @@
 Summary:	QT based file manager inspired by Total Commander
 Summary(pl.UTF-8):	Oparty na QT zarządca plików wzorowany na Total Commanderze
 Name:		qtcmd
-Version:	0.6.1
+Version:	0.6.5
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://qtcmd.nes.pl/download/stable/source/%{name}-%{version}.tar.bz2
-# Source0-md5:	cbff0cf7cc2f1b514e3869dc3e62aa3f
+# Source0-md5:	4f9e0bc929ccc1bd3b1c56a3bb5c40d6
 Patch0:		%{name}-lib64.patch
 URL:		http://qtcmd.nes.pl/
 BuildRequires:	qmake
@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc %dir %{_docdir}/%{name}
 %doc %lang(pl) %{_docdir}/%{name}/pl
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/lib*.so*
 %dir %{_libdir}/qtcmd
 %dir %{_libdir}/qtcmd/plugins
 %attr(755,root,root) %{_libdir}/qtcmd/plugins/lib*.so
