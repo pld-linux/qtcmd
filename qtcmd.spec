@@ -27,7 +27,7 @@ Windows o nazwie "Total Commander".
 %prep
 %setup -q
 %if %{_lib} != "lib"
-%patch0 -p1
+%patch -P0 -p1
 %endif
 find src/ -name '*.pro' | xargs sed -i -e 's,/usr/local/lib,$(LIBDIR),g' -e 's,/usr/local/bin,$(BINDIR),g'
 
